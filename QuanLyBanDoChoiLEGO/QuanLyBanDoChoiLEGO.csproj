@@ -1,0 +1,322 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{59BEC607-061A-4B4D-A6A7-966E82DCAEB2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyBanDoChoiLEGO</RootNamespace>
+    <AssemblyName>QuanLyBanDoChoiLEGO</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.6.0\lib\net45\ExcelDataReader.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.6.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.6.0\lib\net35\ExcelDataReader.DataSet.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.122.19.1, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.DirectoryServices.Protocols" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Z.Dapper.Plus, Version=3.0.24.0, Culture=neutral, PublicKeyToken=59b66d028979105b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Z.Dapper.Plus.3.0.24\lib\net45\Z.Dapper.Plus.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\TransactionDetailBLL.cs" />
+    <Compile Include="BLL\TransactionsBLL.cs" />
+    <Compile Include="BLL\UserBLL.cs" />
+    <Compile Include="BLL\ProductsBLL.cs" />
+    <Compile Include="BLL\DeaCustBLL.cs" />
+    <Compile Include="CNPM_DataClasses.cs">
+      <DependentUpon>CNPM_DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="CNPM_DataClasses.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CNPM_DataClasses.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\DGVPrinter.cs" />
+    <Compile Include="DAL\TransactionDetailDAL.cs" />
+    <Compile Include="DAL\TransactionsDAL.cs" />
+    <Compile Include="DAL\UserDAL.cs" />
+    <Compile Include="DAL\ProductsDAL.cs" />
+    <Compile Include="DAL\DeaCustDAL.cs" />
+    <Compile Include="DataSet1_ORACLE.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1_ORACLE.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="form_dashboard_lichsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_dashboard_lichsu.Designer.cs">
+      <DependentUpon>form_dashboard_lichsu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_customer_information.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_customer_information.Designer.cs">
+      <DependentUpon>form_customer_information.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_dashboard_banhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_dashboard_banhang.Designer.cs">
+      <DependentUpon>form_dashboard_banhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_dashboard_sanpham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_dashboard_sanpham.Designer.cs">
+      <DependentUpon>form_dashboard_sanpham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_dashboard_taikhoan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_dashboard_taikhoan.Designer.cs">
+      <DependentUpon>form_dashboard_taikhoan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_dashboard_thongke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_dashboard_thongke.Designer.cs">
+      <DependentUpon>form_dashboard_thongke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_delete_sanpham_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_delete_sanpham_2.Designer.cs">
+      <DependentUpon>form_delete_sanpham_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_mainwindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_mainwindow.Designer.cs">
+      <DependentUpon>form_mainwindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_login.Designer.cs">
+      <DependentUpon>form_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_nhap_hang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_nhap_hang.Designer.cs">
+      <DependentUpon>form_nhap_hang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_nhap_hang_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_nhap_hang_2.Designer.cs">
+      <DependentUpon>form_nhap_hang_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_san_pham_thong_bao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_san_pham_thong_bao.Designer.cs">
+      <DependentUpon>form_san_pham_thong_bao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_delete_sanpham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_delete_sanpham.Designer.cs">
+      <DependentUpon>form_delete_sanpham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form_update_sanpham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="form_update_sanpham.Designer.cs">
+      <DependentUpon>form_update_sanpham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HelperClass.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form_dashboard_lichsu.resx">
+      <DependentUpon>form_dashboard_lichsu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_customer_information.resx">
+      <DependentUpon>form_customer_information.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_dashboard_banhang.resx">
+      <DependentUpon>form_dashboard_banhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_dashboard_sanpham.resx">
+      <DependentUpon>form_dashboard_sanpham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_dashboard_taikhoan.resx">
+      <DependentUpon>form_dashboard_taikhoan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_dashboard_thongke.resx">
+      <DependentUpon>form_dashboard_thongke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_delete_sanpham_2.resx">
+      <DependentUpon>form_delete_sanpham_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_login.resx">
+      <DependentUpon>form_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_mainwindow.resx">
+      <DependentUpon>form_mainwindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_nhap_hang.resx">
+      <DependentUpon>form_nhap_hang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_nhap_hang_2.resx">
+      <DependentUpon>form_nhap_hang_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_san_pham_thong_bao.resx">
+      <DependentUpon>form_san_pham_thong_bao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_delete_sanpham.resx">
+      <DependentUpon>form_delete_sanpham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form_update_sanpham.resx">
+      <DependentUpon>form_update_sanpham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="CNPM_DataClasses.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>CNPM_DataClasses.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="CNPM_DataClasses.dbml.layout">
+      <DependentUpon>CNPM_DataClasses.dbml</DependentUpon>
+    </None>
+    <None Include="DataSet1_ORACLE.xsc">
+      <DependentUpon>DataSet1_ORACLE.xsd</DependentUpon>
+    </None>
+    <None Include="DataSet1_ORACLE.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1_ORACLE.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSet1_ORACLE.xss">
+      <DependentUpon>DataSet1_ORACLE.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lego_placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lego_points_circles_yellow_9721_225x300.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lego-wallpaper-hd-1366x768-129631.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClipartKey_1645945.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3f98f5942a1a4c6caa135f907479325d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3f98f5942a1a4c6caa135f907479325d1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Red-Studs-Lego-Wallpaper.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blue-lego-wallpaper-47311-48834-hd-wallpapers.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lego_points_circles_yellow_9721_225x3001.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lego-wallpaper-hd-1366x768-1296311.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3f98f5942a1a4c6caa135f907479325d2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lego-wallpaper-hd-1366x768-1296312.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\15a4f0e618ea274d64fd5da418352fee.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\22bc1c0157d727353ee28da7aa6bb8e7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_bg.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
